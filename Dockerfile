@@ -8,4 +8,4 @@ EXPOSE 3000
 #CMD ["node", "index.js"]
 # Use the official Node.js image as the base image
     #CMD ["node", "--inspect=0.0.0.0:9229", "index.js"]"""
-CMD ["npx", "nodemon", "index.js"]
+#CMD ["npx", "nodemon", "index.js"]

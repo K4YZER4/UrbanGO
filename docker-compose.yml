@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: urbango
+    ports:
+      - "3000:3000"   # App en localhost:3000
+      - "9229:9229" 
+    volumes:
+      - .:/usr/src/app   # Monta el código local dentro del contenedor
+      #j- /usr/src/app/node_modules  # Evita que node_modules local sobrescriba los del contenedor
+    #command: npx nodemon index.js
+    command: npx nodemon --legacy-watch index.js  # Usa --legacy-watch para entornos con problemas de watch es decir no confias en los eventos del sistema
