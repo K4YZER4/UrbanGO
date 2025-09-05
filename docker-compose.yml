@@ -7,5 +7,21 @@ services:
       - "9229:9229" 
     volumes:
       - ./Backend:/usr/src/app   # Monta el código local dentro del contenedor
-      - /usr/src/app/node_modules  # Evita que node_modules local sobrescriba los del contenedor
-    command: npx nodemon --legacy-watch index.js  # Usa --legacy-watch para entornos con problemas de watch es decir no confias en los eventos del sistema
+      - node_modules:/usr/src/app/node_modules  # Mantiene las dependencias instaladas en la imagen
+    command: npm run dev  # Usa el script dev del package.json (nodemon)
+  
+  db:
+    container_name: urbango_db
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: urban_user
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: urbango_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"  # Exponer el puerto de PostgreSQL para conexiones externas (opcional)
+volumes:
+  db_data: {}
+  node_modules: {}
