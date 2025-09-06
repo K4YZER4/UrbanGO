@@ -1,15 +1,19 @@
+version: "3.9"
+
 services:
   app:
     build: ./Backend
     container_name: urbango
     ports:
-      - "3000:3000"   # App en localhost:3000
-      - "9229:9229" 
+      - "3000:3000"
+      - "9229:9229"
     volumes:
-      - ./Backend:/usr/src/app   # Monta el código local dentro del contenedor
-      - node_modules:/usr/src/app/node_modules  # Mantiene las dependencias instaladas en la imagen
-    command: npm run dev  # Usa el script dev del package.json (nodemon)
-  
+      - ./Backend:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
+    command: npm run dev
+    depends_on:
+      - db
+
   db:
     container_name: urbango_db
     image: postgres:16-alpine
@@ -21,7 +25,22 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"  # Exponer el puerto de PostgreSQL para conexiones externas (opcional)
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@local
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - db
+
 volumes:
   db_data: {}
   node_modules: {}
+  pgadmin_data: {}
