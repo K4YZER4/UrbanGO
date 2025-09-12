@@ -39,6 +39,18 @@ services:
       - pgadmin_data:/var/lib/pgadmin
     depends_on:
       - db
+  
+  traccar:
+    container_name: urbango_traccar
+    image: traccar/traccar:latest
+    restart: always
+    depends_on:
+      - db
+    volumes:
+      - ./traccar.xml:/opt/traccar/conf/traccar.xml
+    ports:
+      - "8082:8082" 
+      - "5013:5013"
 
 volumes:
   db_data: {}
