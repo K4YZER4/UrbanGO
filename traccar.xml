@@ -12,4 +12,7 @@
     <entry key='database.user'>urban_user</entry>
     <entry key='database.password'>mysecretpassword</entry>
 
+    <!-- Zona horaria -->
+    <entry key='database.timezone'>America/Mazatlan</entry>
+
 </properties>
