@@ -16,7 +16,7 @@ export default function App() {
       <SafeAreaView style={styles.safeArea} edges={["bottom"]}>
         {/* Fondo degradado absoluto */}
         <LinearGradient
-          colors={["#419CFF", "#ffffffff"]}
+          colors={["#298bf4ff", "#9adff0ff"]}
           style={styles.gradient}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}

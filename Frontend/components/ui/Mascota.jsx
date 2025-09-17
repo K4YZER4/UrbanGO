@@ -5,7 +5,7 @@ function Mascota() {
     <View style={styles.contenedor}>
       <Image
         style={styles.imagen}
-        source={require("../../assets/Mascota.png")}
+        source={require("../../assets/LogoBlanco.png")}
       />
     </View>
   );
@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
     marginVertical: 40,
   },
   imagen: {
-    width: 220,
-    height: 220,
+    width: 380,
+    height: 380,
   },
 });
 
