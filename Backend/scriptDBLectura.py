@@ -5,7 +5,7 @@ from datetime import datetime
 import sys
 
 # Cargar las variables de entorno desde el archivo .env
-load_dotenv()
+load_dotenv(dotenv_path='conexion.env') # O 'ConexionBD.env'
 
 # Conectar a la base de datos urbango_db
 try:
