@@ -1,60 +1,64 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, View, StatusBar, Image } from "react-native";
 import { Mascota, BotonLink } from "../../components";
+import { LinearGradient } from "expo-linear-gradient";
+import { SafeAreaView } from "react-native-safe-area-context";
+import LogoBlanco from "../../assets/Mascota.png";
 
 export default function App() {
   return (
-    <View style={styles.contenedor}>
-      <View style={styles.top}>
-        <Mascota />
-      </View>
+    <>
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="light-content"
+      />
 
-      {/* Botón para ir al inicio de sesion */}
-      {/* El asChild se usa para que el boton herede los comportamientos del link */}
-      {/* En el href va la ruta de el archivo al que se quiere dirigir */}
+      <SafeAreaView style={styles.safeArea} edges={["bottom"]}>
+        {/* Fondo degradado absoluto */}
+        <LinearGradient
+          colors={["#419CFF", "#ffffffff"]}
+          style={styles.gradient}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+        />
 
-      <View style={styles.botones}>
-        <BotonLink href="/log/inicio-sesion" texto="Iniciar sesión" />
-        <BotonLink href="/log/registro" texto="Crear cuenta" />
-      </View>
-    </View>
+        {/* Contenido */}
+        <View style={styles.top}>
+          <Mascota />
+        </View>
+
+        <View style={styles.botones}>
+          <BotonLink href="/log/inicio-sesion" texto="Iniciar sesión" />
+          <BotonLink href="/log/registro" texto="Crear cuenta" />
+        </View>
+      </SafeAreaView>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  contenedor: {
+  safeArea: {
     flex: 1,
-    backgroundColor: "#4facfe",
+  },
+  gradient: {
+    ...StyleSheet.absoluteFillObject,
   },
   top: {
-    flex: 3,
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    paddingBottom: 180,
   },
+
   botones: {
-    flex: 1,
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
     backgroundColor: "#fff",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    padding: 20,
+    padding: 40,
     justifyContent: "center",
   },
 });
-
-// const styles = StyleSheet.create({
-//   texto: {
-//     color: "#fff",
-//     fontSize: 20,
-//   },
-//   contenedor: {
-//     flex: 1,
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-//   boton: {
-//     backgroundColor: "#61dafb",
-//     paddingVertical: 15,
-//     paddingHorizontal: 30,
-//     borderRadius: 8,
-//     marginVertical: 10,
-//   },
-// });
