@@ -1,19 +1,11 @@
-// En este archivo estan los colores que se usaran dependiendo del tema seleccionado (claro u oscuro)
-
-export const temaClaro = {
-  background: "#ffffff",
-  text: "#000000",
-  primary: "#298bf4",
-  secondary: "#9adff0",
-  buttonBackground: "#ffffff",
-  buttonText: "#298bf4",
+// En este archivo estan los colores que se usaran en la app para llevar un control sobre estos.
+// Aqui se van air añadiendo los demas colores que usemos
+const colors = {
+  degradadoInicio: "#298bf4ff",
+  degradadoFin: "#9adff0ff",
+  fondoClaro: "#ffffff",
+  botonLinkFonfo: "#f2f2f2",
+  botonLinkTexto: "#333333",
 };
 
-export const temaOscuro = {
-  background: "#121212",
-  text: "#ffffff",
-  primary: "#298bf4",
-  secondary: "#1e3c72",
-  buttonBackground: "#1e1e1e",
-  buttonText: "#ffffff",
-};
+export default colors;

@@ -1,5 +1,6 @@
 import { Text, Pressable, StyleSheet } from "react-native";
 import { Link } from "expo-router";
+import colors from "../../themes/colors";
 
 function BotonLink({ href, texto }) {
   return (
@@ -13,7 +14,7 @@ function BotonLink({ href, texto }) {
 
 const styles = StyleSheet.create({
   boton: {
-    backgroundColor: "#f2f2f2",
+    backgroundColor: colors.botonLinkFonfo,
     paddingVertical: 20,
     borderRadius: 12,
     marginVertical: 10,
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
   texto: {
     fontSize: 20,
     fontWeight: "600",
-    color: "#333",
+    color: colors.botonLinktexto,
     fontWeight: "bold",
   },
 });
