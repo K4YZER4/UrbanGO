@@ -1,5 +1,5 @@
 import { StyleSheet, View, StatusBar, Image } from "react-native";
-import { Mascota, BotonLink } from "../../components";
+import { LogoBlanco, BotonLink } from "../../components";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../../themes/colors";
@@ -23,7 +23,7 @@ export default function App() {
       alignItems: "center",
       // Usamos un valor relativo (18% de la altura de pantalla) en vez de un fijo,
       // así se adapta mejor a distintos dispositivos.
-      paddingBottom: height * 0.18,
+      paddingBottom: height * 0.22,
     },
 
     botones: {
@@ -58,7 +58,7 @@ export default function App() {
 
         {/* Contenido */}
         <View style={styles.top}>
-          <Mascota />
+          <LogoBlanco />
         </View>
 
         <View style={styles.botones}>

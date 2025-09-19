@@ -1,10 +1,10 @@
 import { View, Image, StyleSheet } from "react-native";
-import { LogoBlanco } from "../../assets";
+import { LogoBlanco as LogoBlancoImg } from "../../assets";
 
-function Mascota() {
+function LogoBlanco() {
   return (
     <View style={styles.contenedor}>
-      <Image style={styles.imagen} source={LogoBlanco} />
+      <Image style={styles.imagen} source={LogoBlancoImg} />
     </View>
   );
 }
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Mascota;
+export default LogoBlanco;
