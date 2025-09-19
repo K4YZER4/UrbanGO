@@ -2,7 +2,6 @@ import { StyleSheet, View, StatusBar, Image } from "react-native";
 import { Mascota, BotonLink } from "../../components";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
-import LogoBlanco from "../../assets/Mascota.png";
 
 export default function App() {
   return (

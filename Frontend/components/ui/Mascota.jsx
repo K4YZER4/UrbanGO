@@ -1,12 +1,10 @@
 import { View, Image, StyleSheet } from "react-native";
+import { LogoBlanco } from "../../assets";
 
 function Mascota() {
   return (
     <View style={styles.contenedor}>
-      <Image
-        style={styles.imagen}
-        source={require("../../assets/LogoBlanco.png")}
-      />
+      <Image style={styles.imagen} source={LogoBlanco} />
     </View>
   );
 }
